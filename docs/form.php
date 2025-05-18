@@ -2,7 +2,7 @@
 error_reporting (E_ALL & ~E_NOTICE & ~E_WARNING & ~E_STRICT & ~E_DEPRECATED);
 //
 $mail_sys = "font.depot.jp@gmail.com";	// 管理者のメールアドレス
-$from_name = "サンプル株式会社";	// メール送信者の表示
+$from_name = "font depot ‐フォント デポット‐";	// メール送信者の表示
 $from_mail = "font.depot.jp@gmail.com";	// メール送信者のメールアドレス（返信先）
 $user_mail = "item2";	// 利用者にメールを送る場合のメールアドレス項目
 //---
