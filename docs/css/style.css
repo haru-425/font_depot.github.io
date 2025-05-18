@@ -21,9 +21,9 @@
 /*CSSカスタムプロパティ（サイト全体を一括管理する為の設定）
 ---------------------------------------------------------------------------*/
 :root {
-    --primary-color: #429dff;		/*テンプレートのメインまたはアクセントカラー*/
+    --primary-color: #2fb0c9;		/*テンプレートのメインまたはアクセントカラー*/
     --primary-inverse-color: #fff;		/*上のprimary-colorの対となる色*/
-    --secondary-color: #876ee5;		/*このテンプレートのサブカラー*/
+    --secondary-color: #382ec9;		/*このテンプレートのサブカラー*/
     --secondary-inverse-color: #fff;	/*上のsecondary-colorの対となる色*/
 }
 
@@ -228,12 +228,12 @@ a.ddmenu {cursor: default;}
 	display: flex;	/*横並びにする*/
 	gap: 10px;		/*メニュー同士の間にあけるマージン的な余白*/
 	justify-content: space-between;
+	position: relative;	/*ドロップダウンの幅となる基準を作っておく*/
 }
 
 /*メニュー１個あたりの設定*/
 .large-screen #menubar li {
 	flex: 1;			/*個々のメニューを均等にし、幅いっぱいまで使う設定*/
-	position: relative;	/*ドロップダウンの幅となる基準を作っておく*/
 	text-align: center;	/*テキストをセンタリング*/
 }
 .large-screen #menubar a {
@@ -263,6 +263,23 @@ a.ddmenu {cursor: default;}
 .large-screen #menubar ul ul,
 .small-screen #menubar ul ul {
 	animation: opa1 0.5s 0.1s both;	/*0.1秒待機後、0.5秒かけてフェードイン表示*/
+	overflow: hidden;	/*簡易clearfix*/
+}
+
+/*ドロップダウンメニュー一個あたり*/
+.large-screen #menubar ul ul li,
+.small-screen #menubar ul ul li {
+	display: flex;
+	align-items: center;
+	float: left;		/*左に回り込みます*/
+	margin-left: 2rem;	/*左に空けるスペース。メニュー間のスペースです。*/
+}
+
+/*ドロップダウン内のサムネイル画像*/
+.large-screen #menubar ul ul li img,
+.small-screen #menubar ul ul li img {
+	width: 60px;
+	margin-right: 0.5rem;
 }
 
 
@@ -271,22 +288,12 @@ a.ddmenu {cursor: default;}
 /*ドロップダウンメニューブロック全体*/
 .large-screen #menubar ul ul {
 	position: absolute;z-index: 100;
-	width: 100%;
-}
-
-/*ドロップダウンメニュー一個あたり*/
-.large-screen #menubar ul ul li {
-	margin-top: 5px;	/*メニュー同士の外側（上）のスペース*/
-}
-.large-screen #menubar ul ul a {
-	background: #fff;		/*背景色*/
-	padding: 5px 0;			/*上下、左右へのメニュー内の余白*/
-	border: 1px solid #ccc;	/*枠線の幅、線種、色*/
-}
-
-/*マウスオン時の枠線の色を変更*/
-.large-screen #menubar ul ul a:hover {
-	border-color: var(--primary-color);	/*css冒頭で指定しているprimary-colorを読み込みます*/
+	width: calc(100% - 2vw);
+	left: 0px;
+	background: #fff;
+	border: 1px solid #999;
+	border-radius: 10px;
+	padding: 1vw;
 }
 
 
