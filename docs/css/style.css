@@ -21,7 +21,7 @@
 /*CSSカスタムプロパティ（サイト全体を一括管理する為の設定）
 ---------------------------------------------------------------------------*/
 :root {
-    --primary-color: #ff5e7c;		/*テンプレートのメインまたはアクセントカラー*/
+    --primary-color: #429dff;		/*テンプレートのメインまたはアクセントカラー*/
     --primary-inverse-color: #fff;		/*上のprimary-colorの対となる色*/
     --secondary-color: #876ee5;		/*このテンプレートのサブカラー*/
     --secondary-inverse-color: #fff;	/*上のsecondary-colorの対となる色*/
